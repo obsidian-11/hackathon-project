@@ -1,12 +1,22 @@
-import { Text } from "@chakra-ui/react";
-
-const revalidateTime = 10;
+import { Box, Link, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export default function Home({}) {
   return (
-    <>
-      <Text>Home Page</Text>
-    </>
+    <Box p="24">
+      <Link as={NextLink} href="/dashboard">
+        Dashboard
+      </Link>
+      <br />
+      <Link as={NextLink} href="/login">
+        Login Page
+      </Link>
+      <br />
+      <Link as={NextLink} href="/register">
+        Sign Up Page
+      </Link>
+      <br />
+    </Box>
   );
 }
 

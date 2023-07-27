@@ -50,7 +50,8 @@ const theme = extendTheme(
         500: "#48BB78",
       },
       black: {
-        light: "#A0AEC0",
+        light: "#A0AEC0", // gray/400
+        grayBg: "#F7FAFC",
       },
       primaryBtn: {
         bg: "brand.400", // Background color
@@ -75,8 +76,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>HealthCare</title>
-        <link rel="icon" href="/next.svg" />
+        <title>HealthHub - Personalised Healthcare</title>
+        <link rel="icon" href="/logo.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
