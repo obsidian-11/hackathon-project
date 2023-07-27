@@ -1,7 +1,7 @@
-import { extendTheme } from "@chakra-ui/react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "@fontsource/inter";
 import { pxToRem } from "helpers/pxToRem";
+import Head from "next/head";
 import "../styles/globals.css";
 
 const spacing = {
@@ -38,10 +38,19 @@ const spacing = {
 const theme = extendTheme(
   { ...spacing },
   {
+    fonts: {
+      heading: `'Inter', sans-serif`,
+      body: `'Inter', sans-serif`,
+    },
+  },
+  {
     colors: {
       brand: {
         400: "#48BB78",
         500: "#48BB78",
+      },
+      black: {
+        light: "#A0AEC0",
       },
       primaryBtn: {
         bg: "brand.400", // Background color
@@ -65,6 +74,11 @@ const theme = extendTheme(
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
+      <Head>
+        <title>HealthCare</title>
+        <link rel="icon" href="/next.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Component {...pageProps} />
     </ChakraProvider>
   );
