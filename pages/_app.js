@@ -56,6 +56,15 @@ const theme = extendTheme(
       cyan: {
         600: "#00A3C4",
       },
+      red: {
+        100: "#FED7D7",
+      },
+      green: {
+        100: "#C6F6D5",
+      },
+      orange: {
+        100: "#FEEBCB",
+      },
       primaryBtn: {
         bg: "brand.400", // Background color
         color: "#FFFFFF", // Text color
