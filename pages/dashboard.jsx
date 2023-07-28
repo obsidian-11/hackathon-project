@@ -1,15 +1,17 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
-import DashboardIcon from "svg/DashboardIcon";
-import LogoIcon from "svg/LogoIcon";
+import TopMenu from "components/molecules/top-menu/TopMenu";
 import NextLink from "next/link";
 import CalendarIcon from "svg/CalendarIcon";
+import ChatIcon from "svg/ChatIcon";
+import DashboardIcon from "svg/DashboardIcon";
+import LogoIcon from "svg/LogoIconOnly";
 import ReadIcon from "svg/ReadIcon";
 import TicketIcon from "svg/TicketIcon";
-import ChatIcon from "svg/ChatIcon";
 
 const Dashboard = () => {
   return (
-    <Flex bg="black.grayBg" height="100vh">
+    <Flex bg="black.grayBg" w="100%" height="100vh">
+      {/* sidebar */}
       <Flex bg="white" align="center" w="24" flexDir="column">
         <Box py="36">
           <LogoIcon />
@@ -69,6 +71,9 @@ const Dashboard = () => {
           </Link>
         </Flex>
       </Flex>
+      <Box px="28" py="16" w="100%">
+        <TopMenu />
+      </Box>
     </Flex>
   );
 };
