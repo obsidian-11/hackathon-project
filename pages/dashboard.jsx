@@ -6,6 +6,7 @@ import {
   Center,
   Flex,
   Heading,
+  Image,
   Link,
   Text,
 } from "@chakra-ui/react";
@@ -42,9 +43,24 @@ const indicatorCardsData = [
   },
 ];
 
+const articlesData = [
+  {
+    heading: "Understanding Human Behaviour",
+    sub: "By Alison Burgers · 24.07.2023",
+    imageSrc: "assets/p1.jpg",
+    category: "• Mental Health",
+  },
+  {
+    heading: "7 Food Items to Include in Your Diet",
+    sub: "By Ladees · 24.07.2023",
+    imageSrc: "assets/p2.jpg",
+    category: "• Weight Loss",
+  },
+];
+
 const Dashboard = () => {
   return (
-    <Flex bg="black.grayBg" w="100%" height="100vh">
+    <Flex bg="black.grayBg" w="100%" minH="100vh">
       {/* menu sidebar */}
       <Flex
         display={{ base: "none", lg: "flex" }}
@@ -116,7 +132,12 @@ const Dashboard = () => {
         <TopMenu />
         <Flex direction={{ base: "column", lg: "row" }}>
           {/* main 👇🏻 */}
-          <Flex pt="24" w={{ base: "100%", lg: "68%" }} direction="column">
+          <Flex
+            gap="32"
+            pt="24"
+            w={{ base: "100%", lg: "68%" }}
+            direction="column"
+          >
             {/* indicator section 👇🏻 */}
             <Flex direction="column">
               <Flex justify="space-between">
@@ -152,7 +173,7 @@ const Dashboard = () => {
             </Flex>
 
             {/* activity section 👇🏻 */}
-            <Flex pt="28" direction="column">
+            <Flex direction="column">
               <Heading size="lg">Activity</Heading>
               <Flex wrap="wrap" gap="16" justifyContent="space-between" pt="16">
                 {indicatorCardsData.map((card, i) => (
@@ -175,6 +196,57 @@ const Dashboard = () => {
                         </Flex>
                       </Flex>
                     </CardBody>
+                  </Card>
+                ))}
+              </Flex>
+            </Flex>
+
+            {/* articles section 👇🏻 */}
+            <Flex direction="column">
+              <Flex justify="space-between">
+                <Heading size="lg">Recommended Articles</Heading>
+                <Button px="12" color="brand.400" variant="ghost">
+                  See All
+                </Button>
+              </Flex>
+              <Flex wrap="wrap" gap="16" justifyContent="space-between" pt="16">
+                {articlesData.map((article, i) => (
+                  <Card flexGrow="1">
+                    <Link
+                      _hover={{ textDecoration: "none" }}
+                      as={NextLink}
+                      href="#"
+                    >
+                      <CardBody>
+                        <Flex align="center">
+                          <Center>
+                            <Center borderRadius="8">
+                              <Image src={article.imageSrc} />
+                            </Center>
+                          </Center>
+                          <Flex
+                            justify="space-between"
+                            gap="8"
+                            px="12"
+                            flexGrow="1"
+                            direction="column"
+                            maxW="64"
+                          >
+                            <Text
+                              fontWeight="700"
+                              color="black.gray"
+                              fontSize="sm"
+                            >
+                              {article.category}
+                            </Text>
+                            <Heading size="sm">{article.heading}</Heading>
+                            <Text color="black.gray" fontSize="sm">
+                              {article.sub}
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </CardBody>
+                    </Link>
                   </Card>
                 ))}
               </Flex>
