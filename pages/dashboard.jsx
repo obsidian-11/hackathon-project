@@ -46,7 +46,13 @@ const Dashboard = () => {
   return (
     <Flex bg="black.grayBg" w="100%" height="100vh">
       {/* menu sidebar */}
-      <Flex bg="white" align="center" w="24" flexDir="column">
+      <Flex
+        display={{ base: "none", lg: "flex" }}
+        bg="white"
+        align="center"
+        w="24"
+        flexDir="column"
+      >
         <Box py="36">
           <LogoIcon />
         </Box>
@@ -108,9 +114,9 @@ const Dashboard = () => {
       {/* right portion */}
       <Box px="28" py="16" w="100%">
         <TopMenu />
-        <Flex>
+        <Flex direction={{ base: "column", lg: "row" }}>
           {/* main 👇🏻 */}
-          <Flex pt="24" w="68%" direction="column">
+          <Flex pt="24" w={{ base: "100%", lg: "68%" }} direction="column">
             {/* indicator section 👇🏻 */}
             <Flex direction="column">
               <Flex justify="space-between">
@@ -119,6 +125,35 @@ const Dashboard = () => {
                   + Add New
                 </Button>
               </Flex>
+              <Flex wrap="wrap" gap="16" justifyContent="space-between" pt="16">
+                {indicatorCardsData.map((card, i) => (
+                  <Card flexGrow="1">
+                    <CardBody>
+                      <Flex align="center">
+                        <Center>
+                          <Center p="8" borderRadius="8" bg={card.bg}>
+                            {card.icon}
+                          </Center>
+                        </Center>
+                        <Flex
+                          justify="space-around"
+                          pl="16"
+                          flexGrow="1"
+                          direction="column"
+                        >
+                          <Heading size="sm">{card.heading}</Heading>
+                          <Text fontSize="sm">{card.sub}</Text>
+                        </Flex>
+                      </Flex>
+                    </CardBody>
+                  </Card>
+                ))}
+              </Flex>
+            </Flex>
+
+            {/* activity section 👇🏻 */}
+            <Flex pt="28" direction="column">
+              <Heading size="lg">Activity</Heading>
               <Flex wrap="wrap" gap="16" justifyContent="space-between" pt="16">
                 {indicatorCardsData.map((card, i) => (
                   <Card flexGrow="1">
