@@ -58,6 +58,54 @@ const articlesData = [
   },
 ];
 
+const recDoctors = [
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    availability: "Mon - Fri",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    availability: "Mon - Fri",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    availability: "Mon - Fri",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+];
+
+const upcAppointments = [
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    appTime: "Today 14:00",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    appTime: "Today 14:00",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+  {
+    name: "Dr James Huberman",
+    profession: "Therapist",
+    appTime: "Today 14:00",
+    photo: "assets/d1.png",
+    link: "#",
+  },
+];
+
 const Dashboard = () => {
   return (
     <Flex bg="black.grayBg" w="100%" minH="100vh">
@@ -130,7 +178,7 @@ const Dashboard = () => {
       {/* right portion */}
       <Box px="28" py="16" w="100%">
         <TopMenu />
-        <Flex direction={{ base: "column", lg: "row" }}>
+        <Flex gap="18" direction={{ base: "column", lg: "row" }}>
           {/* main 👇🏻 */}
           <Flex
             gap="32"
@@ -254,7 +302,90 @@ const Dashboard = () => {
           </Flex>
 
           {/* sidebar 👇🏻 */}
-          <Flex direction="column"></Flex>
+          <Card
+            flexGrow="1"
+            mt={{ base: 0, md: "48" }}
+            bg="white"
+            direction="column"
+          >
+            {/* upcoming appointments section 👇🏻*/}
+            <Flex p="18" direction="column">
+              <Flex align="center" justify="space-between">
+                <Heading size="md">Upcoming Appointments</Heading>
+                <Button px="12" color="brand.400" variant="ghost">
+                  See All
+                </Button>
+              </Flex>
+              <Flex gap="12" pt="12" direction="column">
+                {upcAppointments.map((doc, i) => (
+                  <Flex borderRadius="8" bg="gray.100" flexGrow="1">
+                    <Link
+                      _hover={{ textDecoration: "none" }}
+                      as={NextLink}
+                      href="#"
+                    >
+                      <Flex align="center">
+                        <Center p="12">
+                          <Image borderRadius="8" width="14" src={doc.photo} />
+                        </Center>
+                        <Flex
+                          justify="space-around"
+                          gap="2"
+                          flexGrow="1"
+                          direction="column"
+                          maxW="64"
+                        >
+                          <Heading size="xs">{doc.name}</Heading>
+                          <Text color="black.gray" fontSize="xs">
+                            {doc.profession} | {doc.appTime}
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Link>
+                  </Flex>
+                ))}
+              </Flex>
+            </Flex>
+
+            {/* recommended section 👇🏻*/}
+            <Flex p="18" pt="2" direction="column">
+              <Flex align="center" justify="space-between">
+                <Heading size="md">Recommended Doctors</Heading>
+                <Button px="12" color="brand.400" variant="ghost">
+                  See All
+                </Button>
+              </Flex>
+              <Flex gap="12" pt="12" direction="column">
+                {recDoctors.map((doc, i) => (
+                  <Flex borderRadius="8" bg="gray.100" flexGrow="1">
+                    <Link
+                      _hover={{ textDecoration: "none" }}
+                      as={NextLink}
+                      href="#"
+                    >
+                      <Flex align="center">
+                        <Center p="12">
+                          <Image borderRadius="8" width="14" src={doc.photo} />
+                        </Center>
+                        <Flex
+                          justify="space-around"
+                          gap="2"
+                          flexGrow="1"
+                          direction="column"
+                          maxW="64"
+                        >
+                          <Heading size="xs">{doc.name}</Heading>
+                          <Text color="black.gray" fontSize="xs">
+                            {doc.profession} | {doc.availability}
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Link>
+                  </Flex>
+                ))}
+              </Flex>
+            </Flex>
+          </Card>
         </Flex>
       </Box>
     </Flex>

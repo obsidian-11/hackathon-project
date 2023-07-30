@@ -54,6 +54,9 @@ const theme = extendTheme(
         gray: "#718096", // gray/500
         grayBg: "#F7FAFC",
       },
+      gray: {
+        100: "#EDF2F7",
+      },
       cyan: {
         600: "#00A3C4",
       },
