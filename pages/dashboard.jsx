@@ -10,6 +10,7 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import ActivityChart from "components/molecules/activity/Chart";
 import TopMenu from "components/molecules/top-menu/TopMenu";
 import NextLink from "next/link";
 import BloodIcon from "svg/BloodIcon";
@@ -223,30 +224,9 @@ const Dashboard = () => {
             {/* activity section 👇🏻 */}
             <Flex direction="column">
               <Heading size="lg">Activity</Heading>
-              <Flex wrap="wrap" gap="16" justifyContent="space-between" pt="16">
-                {indicatorCardsData.map((card, i) => (
-                  <Card flexGrow="1">
-                    <CardBody>
-                      <Flex align="center">
-                        <Center>
-                          <Center p="8" borderRadius="8" bg={card.bg}>
-                            {card.icon}
-                          </Center>
-                        </Center>
-                        <Flex
-                          justify="space-around"
-                          pl="16"
-                          flexGrow="1"
-                          direction="column"
-                        >
-                          <Heading size="sm">{card.heading}</Heading>
-                          <Text fontSize="sm">{card.sub}</Text>
-                        </Flex>
-                      </Flex>
-                    </CardBody>
-                  </Card>
-                ))}
-              </Flex>
+              <Card mt="18" py="48" pl="16" flexGrow="1">
+                <ActivityChart />
+              </Card>
             </Flex>
 
             {/* articles section 👇🏻 */}
