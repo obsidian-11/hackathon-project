@@ -1,4 +1,4 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export default function Home({}) {

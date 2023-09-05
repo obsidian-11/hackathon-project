@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Heading } from "@chakra-ui/react";
-import RegistrationForm from "components/organisms/registration-form/RegisterForm";
+import RegistrationForm from "components/organisms/RegisterForm";
 import Logo from "svg/Logo";
 
 const RegisterPage = () => {

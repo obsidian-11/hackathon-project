@@ -31,7 +31,7 @@ const Avatar = () => (
 const TopMenu = () => {
   const [isLg] = useMediaQuery("(min-width: 992px)");
   return (
-    <Flex align="center" borderRadius="8" bg="white" p="12">
+    <Flex mb="24" align="center" borderRadius="8" bg="white" p="12">
       <Box display={{ base: "none", lg: "block" }} w="70%">
         <InputGroup>
           <Input px="12" placeholder="Search" />

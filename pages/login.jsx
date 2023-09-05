@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
-import LoginForm from "components/organisms/login-form/LoginForm";
+import LoginForm from "components/organisms/LoginForm";
 import NextLink from "next/link";
 import Logo from "svg/Logo";
 
