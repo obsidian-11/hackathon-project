@@ -18,18 +18,20 @@ const data = [
 ];
 
 const ActivityChart = () => (
-  <LineChart
-    width={550}
-    height={300}
-    data={data}
-    margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-  >
-    <Line type="monotone" dataKey="steps" stroke="#48BB78" />
-    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    <XAxis dataKey="name" />
-    <YAxis domain={[0, 12000]} />
-    <Tooltip />
-  </LineChart>
+  <>
+    <LineChart
+      width={800}
+      height={280}
+      data={data}
+      margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+    >
+      <Line strokeWidth={2} type="monotone" dataKey="steps" stroke="#48BB78" />
+      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <XAxis dataKey="name" />
+      <YAxis domain={[0, 12000]} />
+      <Tooltip />
+    </LineChart>
+  </>
 );
 
 export default ActivityChart;

@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   Center,
+  Container,
   Flex,
   Heading,
   Image,
@@ -177,9 +178,13 @@ const Dashboard = () => {
         </Flex>
       </Flex>
       {/* right portion */}
-      <Box px="28" py="16" w="100%">
+      <Box h="100vh" overflowY="auto" px="28" py="16" w="100%">
         <TopMenu />
-        <Flex gap="18" direction={{ base: "column", lg: "row" }}>
+        <Flex
+          align={{ base: "stretch", lg: "flex-start" }}
+          gap="18"
+          direction={{ base: "column", lg: "row" }}
+        >
           {/* main 👇🏻 */}
           <Flex
             gap="32"
@@ -224,8 +229,27 @@ const Dashboard = () => {
             {/* activity section 👇🏻 */}
             <Flex direction="column">
               <Heading size="lg">Activity</Heading>
-              <Card mt="18" py="48" pl="16" flexGrow="1">
-                <ActivityChart />
+              <Card mt="18" p="28" flexGrow="1">
+                <Flex direction="column" gap="28">
+                  <Flex justify="space-between" align="center">
+                    <Button px="12" color="gray.500" variant="ghost">
+                      {`← Previous week`}
+                    </Button>
+
+                    <Text fontWeight="bold">29 Aug - 5 Sep</Text>
+
+                    <Button px="12" color="gray.500" variant="ghost">
+                      {`Next week →`}
+                    </Button>
+                  </Flex>
+
+                  <Flex>
+                    <Text fontWeight="bold">Total Steps:&nbsp;</Text>
+                    <Text>45,870</Text>
+                  </Flex>
+
+                  <ActivityChart />
+                </Flex>
               </Card>
             </Flex>
 
