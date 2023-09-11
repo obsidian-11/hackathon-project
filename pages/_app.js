@@ -48,6 +48,7 @@ const theme = extendTheme(
       brand: {
         400: "#48BB78",
         500: "#48BB78",
+        600: "#48BB78",
       },
       black: {
         light: "#A0AEC0", // gray/400

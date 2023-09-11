@@ -1,3 +1,14 @@
 .chakra-form__required-indicator {
   display: none;
 }
+
+#online-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #48bb78;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 4px solid white;
+}
